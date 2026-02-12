@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up / Log In</title>
+  <link rel="stylesheet" href="auth.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="app.js"></script>
+</head>
+<body class="signup-page">
+
+<div id="app">
+  <div class="card">
+
+    <h2>Sign up</h2>
+
+    <!-- Toggle buttons on top -->
+    <div class="toggle-buttons">
+      <a :class="{ active: signup }" @click="signup = true" href="signup.html">Sign up</a>
+      <a :class="{ active: !signup }" @click="signup = false" href="login.html">Log in</a>
+    </div>
+
+    <!-- Form -->
+    <form @submit.prevent="submitForm">
+      <input type="email" placeholder="Email" v-model="email" required />
+      <input type="password" placeholder="Password" v-model="password" required />
+
+      <!-- Confirm password only for Sign Up -->
+      <input
+        v-if="!isLogin"
+        type="password"
+        placeholder="Confirm Password"
+        v-model="confirmPassword"
+        required
+      />
+
+      <button type="submit" class="main-btn">
+       Sign up
+      </button>
+    </form>
+
+
+  </div>
+</div>
+
+</body>
+</html>

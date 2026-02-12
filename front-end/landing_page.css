@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  body {
+    background-color: #e6e6e6;
+  }
+  
+  /* NAVBAR */
+  .navbar {
+    background-color: #1f3a66;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+  }
+  
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo-small {
+    width: 45px;
+  }
+  
+  .brand-name {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+  
+  .login {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .enroll-btn {
+    background-color: #ffffff;
+    color: #1f3a66;
+    padding: 8px 18px;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .enroll-btn:hover {
+    background-color: #d9d9d9;
+  }
+  
+  /* HERO SECTION */
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 100px;
+  }
+  
+  .hero-left {
+    max-width: 550px;
+  }
+  
+  .hero-left h1 {
+    font-size: 60px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+  }
+  
+  .highlight {
+    color: #8a95c9;
+  }
+  
+  .hero-left p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  .hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo-large {
+    width: 350px;
+  }
+  
