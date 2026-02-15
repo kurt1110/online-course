@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Details</title>
+  <link rel="stylesheet" href="course.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+<div id="detailsApp">
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-left">
+      <img src="./assets/au-logo.png" class="logo-img" alt="Araullo logo">
+      <span class="university-name">Araullo University</span>
+    </div>
+    <div class="nav-right">
+      <a href="#">Log In</a>
+      <button>Enroll Now</button>
+    </div>
+  </header>
+      
+  <!-- HERO IMAGE -->
+  <section class="hero">
+    <img :src="course.image" alt="Course image" class="course-image">
+  </section>
+
+  <!-- COURSE INFO -->
+  <section class="course-info">
+    <div class="left">
+      <h1>{{ course.title }}</h1>
+      <p class="subtitle">Your Path to Digital Mastery</p>
+    </div>
+
+    <div class="right">
+      <h3>{{ course.instructor }}</h3>
+      <p>{{ course.duration }}</p>
+      <p>3 units</p>
+    </div>
+  </section>
+
+  <!-- LEARNING SECTION -->
+  <section class="learning">
+    <h2>Learning Path & Topics</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Module 1: The Digital Foundation</h3>
+        <ul>
+          <li>Introduction to Computing</li>
+          <li>Programming Basics</li>
+          <li>Discrete Mathematics</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Networking Infrastructure</h3>
+        <ul>
+          <li>Networking I</li>
+          <li>Data Communication</li>
+          <li>System Introduction</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Security & Professionalism</h3>
+        <ul>
+          <li>Information Security</li>
+          <li>IT Ethics</li>
+          <li>Capstone Project</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Key Skills You Will Gain</h3>
+        <ul>
+          <li>Full Stack Development</li>
+          <li>Industry Application</li>
+          <li>Modern Web Systems</li>
+        </ul>
+      </div>
+    </div>
+
+    <button class="enroll-btn">Enroll Now</button>
+  </section>
+
+</div>
+
+<script>
+const { createApp } = Vue;
+
+createApp({
+  data() {
+    return {
+      course: {}
+    }
+  },
+  mounted() {
+    const data = localStorage.getItem("selectedCourse");
+    if (data) {
+      this.course = JSON.parse(data);
+    }
+  }
+}).mount("#detailsApp");
+</script>
+
+</body>
+</html>

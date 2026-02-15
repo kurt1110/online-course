@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Available Courses</title>
+    <link rel="stylesheet" href="course.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+<header class="navbar">
+    <div class="nav-container">
+        <div class="nav-left">
+            <img src="./assets/au-logo.png" alt="Araullo Logo" class="logo-img">
+            <span class="university-name">Araullo University</span>
+        </div>
+    </div>
+</header>
+    <div class="page">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-inner">
+                <input type="search" placeholder="Search courses" class="sidebar-search" v-model="searchQuery">
+                <h4>Departments</h4>
+                <ul class="department-list">
+                    <li><button class="dept-btn">All</button></li>
+                    <li><button class="dept-btn">Computer Studies</button></li>
+                    <li><button class="dept-btn">Business</button></li>
+                    <li><button class="dept-btn">Education</button></li>
+                    <li><button class="dept-btn">Engineering</button></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main content -->
+        <main class="content">
+            <!-- Page Title -->
+            <section class="title-section">
+                <h1>Available Courses</h1>
+                <p>Browse courses across all departments</p>
+            </section>
+
+            <!-- Courses Grid -->
+            <section class="courses-container">
+                <div class="course-card" v-for="course in filteredCourses" :key="course.id">
+                    <img :src="course.image" alt="Course image" class="course-image">
+
+                    <div class="course-content">
+                        <h2>{{ course.title }}</h2>
+                        <h4>{{ course.instructor }}</h4>
+                        <p>{{ course.duration }}</p>
+                        <button @click="viewDetails(course)">View Details</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

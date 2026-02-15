@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background-color: #142850;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+.university-name {
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* ===== TITLE ===== */
+.title-section {
+    padding: 40px;
+}
+
+.title-section h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.title-section p {
+    font-size: 20px;
+    color: #555;
+}
+
+/* ===== COURSES SECTION (VERTICAL SCROLL) ===== */
+.courses-container {
+    display: flex;
+    flex-wrap: wrap;              /* Cards wrap like grid */
+    gap: 30px;
+    padding: 20px 40px 40px;
+
+    max-height: 600px;            /* Height before scrolling */
+    overflow-y: auto;             /* Vertical scroll */
+    overflow-x: hidden;           /* Remove horizontal scroll */
+}
+
+/* Vertical Scrollbar */
+.courses-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.courses-container::-webkit-scrollbar-thumb {
+    background: #142850;
+    border-radius: 10px;
+}
+
+/* ===== COURSE CARD ===== */
+.course-card {
+    width: 300px;                 /* Fixed width for clean grid */
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+.course-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.course-content {
+    padding: 20px;
+}
+
+.course-content h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.course-content h4 {
+    margin-bottom: 10px;
+    color: #555;
+    font-weight: 500;
+}
+
+.course-content p {
+    margin-bottom: 15px;
+}
+
+/* ===== BUTTON ===== */
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #00a8cc;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-weight: 500;
+}
+
+button:hover {
+    background-color: #007ea7;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .title-section {
+        padding: 20px;
+    }
+
+    .title-section h1 {
+        font-size: 28px;
+    }
+
+    .title-section p {
+        font-size: 16px;
+    }
+
+    .courses-container {
+        padding: 20px;
+        gap: 20px;
+        max-height: 500px;
+    }
+
+    .course-card {
+        width: 100%;  /* Full width on mobile */
+    }
+}

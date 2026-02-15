@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Araullo University</title>
+
+  <!-- Vue CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="landing_page.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- HEADER -->
+  <header class="navbar">
+    <div class="nav-left">
+      <img src="assets/au-logo.png" alt="Araullo Logo" class="logo">
+      <h1>{{ universityName }}</h1>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+    <!-- LEFT SIDE -->
+    <div class="left">
+
+      <!-- SEARCH -->
+      <div class="search-box">
+        🔍
+        <input
+          type="text"
+          v-model="search"
+          placeholder="Search for Courses, Department, or Instructor"
+        />
+      </div>
+
+      <!-- FEATURES -->
+      <div
+        class="feature"
+        v-for="(item, index) in features"
+        :key="index"
+      >
+        <div class="feature-icon">{{ item.icon }}</div>
+        <div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+      <img src="assets/au-logo.png" alt="Araullo University Seal" class="seal">
+    </div>
+
+  </main>
+
+</div>
+
+<!-- VUE SCRIPT -->
+<script>
+const { createApp } = Vue;
+
+createApp({
+  data() {
+    return {
+      universityName: "Araullo University",
+      search: "",
+      features: [
+        {
+          icon: "👥",
+          title: "Expert Faculty",
+          description:
+            "Learn from distinguished professors and experienced instructors"
+        },
+        {
+          icon: "⏰",
+          title: "Flexible Schedule",
+          description:
+            "Choose from various time slots and build your ideal class schedule"
+        },
+        {
+          icon: "🎓",
+          title: "Earn Credits",
+          description:
+            "Complete courses and earn academic credits toward your degree"
+        }
+      ]
+    };
+  }
+}).mount("#app");
+</script>
+
+</body>
+</html>

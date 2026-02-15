@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Available Courses</title>
+    <link rel="stylesheet" href="course.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+<header class="navbar">
+    <div class="nav-container">
+        <img src="./assets/au-logo.png" alt="Araullo Logo" class="logo-img">
+        <span class="university-name">Araullo University</span>
+    </div>
+</header>
+
+
+    <!-- Page Title -->
+    <section class="title-section">
+        <h1>Available Courses</h1>
+        <p>Browse courses across all departments</p>
+    </section>
+
+    <!-- Courses Container with Scroll -->
+    <section class="courses-container">
+        <div class="course-card" v-for="course in courses" :key="course.id">
+            <img :src="course.image" alt="Course image" class="course-image">
+
+            <div class="course-content">
+                <h2>{{ course.title }}</h2>
+                <h4>{{ course.instructor }}</h4>
+                <p>{{ course.duration }}</p>
+                <button @click="viewDetails(course)">View Details</button>
+            </div>
+        </div>
+
+        
+
+    </section>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
